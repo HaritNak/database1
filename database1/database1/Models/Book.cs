@@ -20,5 +20,14 @@ namespace database1.Models
         [Range(1,1000, ErrorMessage ="ราคาต้องอยู่ระหว่าง {1} กับ {2}")]
         [Required(ErrorMessage = "ต้องระบุราคาหนังสือ")]
         public decimal Price { get; set; }
+        [DisplayName("ประเภทหนังสือ")]
+        public BookType BookType { get; set; }
+    }
+    public enum BookType
+    {
+        [Display(Name ="ฟรี")]
+        Free,
+        [Display(Name ="จ่ายเงิน!!")]
+        Paid
     }
 }
